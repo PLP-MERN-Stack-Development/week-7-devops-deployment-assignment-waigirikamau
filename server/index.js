@@ -34,3 +34,6 @@ mongoose.connect(process.env.MONGO_URI, {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+app.get('/api/healthz', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
